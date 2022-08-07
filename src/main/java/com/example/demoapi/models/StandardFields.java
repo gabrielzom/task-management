@@ -1,5 +1,6 @@
 package com.example.demoapi.models;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -9,10 +10,8 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class StandardFields implements Serializable {
 	
+	@Serial
 	private static final long serialVersionUID = 1L;
-
-//	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private long id; 
 	
 	@Column(nullable = false, length = 60)
 	private String createdBy;
@@ -25,13 +24,7 @@ public abstract class StandardFields implements Serializable {
 	 
 	@Column(nullable = true, columnDefinition = "DATETIME")
 	private Date updatedAt;
-	   
-//	public long getId() {
-//		return id;
-//	}
-//	public void setId(long id) {
-//		this.id = id;
-//	} 
+
 	public String getCreatedBy() {
 		return createdBy;
 	}
